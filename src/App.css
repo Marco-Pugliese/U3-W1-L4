@@ -1,0 +1,11 @@
+.selected {
+  box-shadow: 0px 0px 15px 5px red;
+  scale: 1.05;
+  z-index: 1;
+}
+* {
+  transition: 0.8s all;
+}
+.card:hover {
+  cursor: pointer;
+}
