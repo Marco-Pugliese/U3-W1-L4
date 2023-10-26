@@ -45,14 +45,12 @@ class CommentArea extends Component {
           <h6 className="py-0 my-0">Commenti: </h6>
         </ListGroup.Item>
         {this.state.comments.map((comment) => {
-          return (
-            <div>
-              <CommentList />
-              <ListGroup.Item key={comment.elementId} className="py-1">
-                {comment.comment} - {comment.author} | {comment.rate}
-              </ListGroup.Item>{" "}
-            </div>
-          );
+          return ""; // <div>
+          //   <CommentList />
+          //   <ListGroup.Item key={comment.elementId} className="py-1">
+          //     {comment.comment} - {comment.author} | {comment.rate}
+          //   </ListGroup.Item>{" "}
+          // </div>
         })}
         <AddComment />
       </ListGroup>
