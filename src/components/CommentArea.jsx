@@ -10,7 +10,7 @@ class CommentArea extends Component {
   };
   getComments = () => {
     fetch(
-      `https://striveschool-api.herokuapp.com/api/comments/${this.state.elementId}`,
+      `https://striveschool-api.herokuapp.com/api/comments/${this.props.id}`,
       {
         headers: {
           Authorization:
@@ -27,7 +27,7 @@ class CommentArea extends Component {
       })
       .then((datas) => {
         console.log(datas);
-        this.setState({ comments: datas });
+        this.setState({ comments: datas, elementId: datas.elementId });
       })
       .catch((err) => {
         console.log("Error: ", err);

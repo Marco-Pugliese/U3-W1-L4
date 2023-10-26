@@ -10,6 +10,7 @@ class SingleBook extends Component {
   render() {
     return (
       <Card
+        key={this.props.asin}
         onClick={() => this.setState({ selected: !this.state.selected })}
         className={this.state.selected ? "d-flex selected" : "d-flex"}
       >
