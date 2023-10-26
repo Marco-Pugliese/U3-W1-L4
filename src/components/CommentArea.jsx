@@ -8,7 +8,8 @@ class CommentArea extends Component {
     comments: [],
     elementId: "",
   };
-  getComments = () => {
+
+  getComments = (id) => {
     fetch(
       `https://striveschool-api.herokuapp.com/api/comments/${this.props.id}`,
       {
