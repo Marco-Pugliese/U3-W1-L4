@@ -9,20 +9,20 @@ class SingleBook extends Component {
 
   render() {
     return (
-      <Card
-        key={this.props.asin}
-        onClick={() => this.setState({ selected: !this.state.selected })}
-        className={this.state.selected ? "d-flex selected" : "d-flex"}
-      >
-        <Card.Img variant="top" src={this.props.book.img} />
-        <Card.Body className="bg-success flex-grow-1 d-flex flex-column justify-content-between">
-          <Card.Title style={{ color: "black" }}>
-            {this.props.book.title}
-          </Card.Title>
-        </Card.Body>
-
-        {this.state.selected && <CommentArea />}
-      </Card>
+      <>
+        <Card
+          onClick={() => this.setState({ selected: !this.state.selected })}
+          style={{ border: this.state.selected ? "3px solid red" : "none" }}
+        >
+          <Card.Img variant="top" src={this.props.book.img} />
+          <Card.Body>
+            <Card.Title style={{ color: "black" }}>
+              {this.props.book.title}
+            </Card.Title>
+          </Card.Body>
+          {this.state.selected && <CommentArea bookId={this.props.book.asin} />}
+        </Card>
+      </>
     );
   }
 }
