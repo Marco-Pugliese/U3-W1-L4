@@ -36,7 +36,11 @@ class BookList extends Component {
                 )
                 .map((b) => (
                   <Col key={b.asin} className="d-flex col-12 col-lg-6">
-                    <SingleBook book={b} selectedBook={this.selectedBook} />
+                    <SingleBook
+                      book={b}
+                      selectedBook={this.selectedBook}
+                      bookAsin={this.state.selectedBookAsin}
+                    />
                   </Col>
                 ))}
             </Row>

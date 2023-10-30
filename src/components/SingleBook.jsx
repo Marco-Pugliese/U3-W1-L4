@@ -13,6 +13,9 @@ class SingleBook extends Component {
           onClick={() => {
             this.props.selectedBook(this.props.book.asin);
           }}
+          className={
+            this.props.bookAsin === this.props.book.asin ? "selected" : ""
+          }
         >
           <Card.Img variant="top" src={this.props.book.img} />
           <Card.Body>
