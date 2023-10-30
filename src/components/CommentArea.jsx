@@ -11,11 +11,17 @@ class CommentArea extends Component {
     this.getComments();
   };
 
+  componentDidUpdate = (prevProp, prevState) => {
+    if (prevProp.bookAsin !== this.props.bookAsin) {
+      this.getComments();
+    }
+  };
+
   getComments = async () => {
     try {
       const response = await fetch(
         "https://striveschool-api.herokuapp.com/api/comments/" +
-          this.props.bookId,
+          this.props.bookAsin,
         {
           headers: {
             Authorization:

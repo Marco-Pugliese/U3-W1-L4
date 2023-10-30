@@ -1,18 +1,18 @@
 import { Component } from "react";
 import { Card } from "react-bootstrap";
-import CommentArea from "./CommentArea";
 
 class SingleBook extends Component {
   state = {
-    selected: false,
+    selected: null,
   };
 
   render() {
     return (
       <>
         <Card
-          onClick={() => this.setState({ selected: !this.state.selected })}
-          className={this.state.selected ? "selected" : ""}
+          onClick={() => {
+            this.props.selectedBook(this.props.book.asin);
+          }}
         >
           <Card.Img variant="top" src={this.props.book.img} />
           <Card.Body>
@@ -20,7 +20,6 @@ class SingleBook extends Component {
               {this.props.book.title}
             </Card.Title>
           </Card.Body>
-          {this.state.selected && <CommentArea bookId={this.props.book.asin} />}
         </Card>
       </>
     );
