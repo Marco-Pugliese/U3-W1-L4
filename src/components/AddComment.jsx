@@ -9,6 +9,14 @@ class AddComment extends Component {
       elementId: this.props.bookId,
     },
   };
+  componentDidUpdate = (prevProps) => {
+    if (prevProps.bookId !== this.state.elementId) {
+      this.setState({
+        ...this.state.commentObject,
+        elementId: this.props.bookId,
+      });
+    }
+  };
 
   sendNewReview = async (e) => {
     e.preventDefault();
